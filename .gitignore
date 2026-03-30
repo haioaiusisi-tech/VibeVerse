@@ -1,0 +1,16 @@
+node_modules
+dist
+build
+release
+output
+.expo
+.gradle
+.idea
+coverage
+*.log
+backend/uploads/*
+!backend/uploads/.gitkeep
+mobile/android
+mobile/.expo-shared
+desktop/dist-electron
+desktop/release

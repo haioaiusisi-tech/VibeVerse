@@ -1,0 +1,26 @@
+{
+  "name": "vibeverse",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "desktop",
+    "mobile"
+  ],
+  "scripts": {
+    "generate:branding": "node ./build_scripts/scripts/generate-branding.mjs",
+    "install:all": "npm install --workspaces",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:desktop": "npm run dev --workspace desktop",
+    "dev:mobile": "npm run start --workspace mobile",
+    "build:backend": "npm run build --workspace backend",
+    "build:desktop": "npm run build --workspace desktop",
+    "build:mobile": "npm run build:apk --workspace mobile",
+    "build:all": "npm run build:backend && npm run build:desktop && npm run build:mobile",
+    "package": "powershell -ExecutionPolicy Bypass -File ./build_scripts/scripts/package-all.ps1"
+  },
+  "devDependencies": {
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.4"
+  }
+}

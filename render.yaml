@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: vibeverse-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24.14.1
+      - key: ALLOW_MEMORY_DB
+        value: "false"
+      - key: CLIENT_URL
+        value: "app://-,exp://127.0.0.1:8081,https://your-desktop-web-origin.example"
+      - key: APP_BASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
